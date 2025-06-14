@@ -76,7 +76,6 @@ namespace CarSimulator
             try
             {
                 _user = await apiService.FetchApiData();
-                Console.WriteLine($"Welcome {_user.Name.First} {_user.Name.Last}");
             }
             catch (Exception e)
             {
