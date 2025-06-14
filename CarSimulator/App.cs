@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Services.ApiService;
 
 namespace CarSimulator
 {
@@ -13,7 +12,7 @@ namespace CarSimulator
         private readonly CarActions _carActions;
         private readonly Status _status;
         private readonly HttpClient _httpClient;
-        private RandomUsers _user;
+        private Result _user;
         private bool _IsFirstRun;
 
         public App()
@@ -66,6 +65,7 @@ namespace CarSimulator
                         Console.ReadKey();
                         break;
                 }
+
                 _IsFirstRun = false;
                 Console.Clear();
             }
@@ -76,6 +76,7 @@ namespace CarSimulator
             try
             {
                 _user = await apiService.FetchApiData();
+                Console.WriteLine($"Welcome {_user.Name.First} {_user.Name.Last}");
             }
             catch (Exception e)
             {
@@ -89,14 +90,13 @@ namespace CarSimulator
             {
                 if (_IsFirstRun)
                 {
-                    Console.WriteLine($"Welcome! {_user.Title} {_user.First} {_user.Last}, enjoy your ride!");
+                    Console.WriteLine($"Welcome! {_user.Name.Title} {_user.Name.First} {_user.Name.Last}, enjoy your ride!");
                 }
                 else
                 {
-                    Console.WriteLine($"You're doing great, {_user.First}! Keep driving!");
+                    Console.WriteLine($"You're doing great, {_user.Name.First}! Keep driving!");
                 }
             }
         }
     }
-
 }
