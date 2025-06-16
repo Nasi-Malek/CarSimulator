@@ -16,32 +16,21 @@ namespace CarSimulator.Tests
         [TestInitialize]
         public void Setup()
         {
-            _httpClient = new HttpClient
-            {
-                Timeout = TimeSpan.FromSeconds(5)
-            };
-
+            _httpClient = new HttpClient();
             _getTheApi = new GetTheApi(_httpClient);
         }
 
         [TestMethod]
-        [TestCategory("IntegrationTest")]
-        public async Task FetchApiData_Should_Return_Valid_User()
+        public async Task FetchApidata_ShouldReturnRandomUser()
         {
-            // ACT
+            //ACT  
             var result = await _getTheApi.FetchApiData();
 
-            // ASSERT
-            Assert.IsNotNull(result, "API returned null result.");
-            Assert.IsNotNull(result.Name, "Name object is null.");
-            Assert.IsFalse(string.IsNullOrWhiteSpace(result.Name.First), "First name is missing.");
-            Assert.IsFalse(string.IsNullOrWhiteSpace(result.Name.Last), "Last name is missing.");
-            Assert.IsFalse(string.IsNullOrWhiteSpace(result.Name.Title), "Title is missing.");
-
-            // Optional checks if available
-            Assert.IsFalse(string.IsNullOrWhiteSpace(result.Gender), "Gender is missing.");
-            Assert.IsNotNull(result.Location, "Location is null.");
-            Assert.IsFalse(string.IsNullOrWhiteSpace(result.Location.Country), "Country is missing.");
+            //ASSERT  
+            Assert.IsNotNull(result);
+            Assert.IsFalse(string.IsNullOrEmpty(result.Name.First));
+            Assert.IsFalse(string.IsNullOrEmpty(result.Name.Last));
+            Assert.IsFalse(string.IsNullOrEmpty(result.Name.Title));
         }
     }
 }

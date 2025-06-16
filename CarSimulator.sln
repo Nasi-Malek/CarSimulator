@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.Tests", "CarSimulator.Tests\CarSimulator.Tests.csproj", "{3C6B14EF-0529-439E-8475-0AF0A209AE05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.NUnit", "CarSimulator.NUnit\CarSimulator.NUnit.csproj", "{80754700-B145-42D3-8A01-1C345F7AEA96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3C6B14EF-0529-439E-8475-0AF0A209AE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C6B14EF-0529-439E-8475-0AF0A209AE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C6B14EF-0529-439E-8475-0AF0A209AE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80754700-B145-42D3-8A01-1C345F7AEA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80754700-B145-42D3-8A01-1C345F7AEA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80754700-B145-42D3-8A01-1C345F7AEA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80754700-B145-42D3-8A01-1C345F7AEA96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
