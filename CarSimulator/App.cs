@@ -89,13 +89,18 @@ namespace CarSimulator
             {
                 if (_IsFirstRun)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine($"Welcome! {_user.Name.Title} {_user.Name.First} {_user.Name.Last}, enjoy your ride!");
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"You're doing great, {_user.Name.First}! Keep driving!");
                 }
+
+                Console.ResetColor();
             }
         }
+
     }
 }
