@@ -1,101 +1,104 @@
-﻿🚗 CarSimulator
-A modular, console-based car driving simulation built in C#. This project simulates vehicle behavior, driver state (like tiredness and hunger), and integrates both unit and API-based interaction testing. The structure is layered for better testability and separation of concerns.
+﻿# 🚗 **CarSimulator**
 
-📌 Description
-CarSimulator is a C#-based simulation program that allows users to interactively drive a virtual car while testing its internal systems. The program includes:
+A **modular, console-based car driving simulation** built with **C# and .NET 9.0**. This project simulates vehicle behavior, driver states (tiredness and hunger), and integrates unit testing and external API interaction to ensure robust simulation.
 
-A command-line interface for car control (move, turn, reverse, refuel, rest)
+---
 
-Driver condition monitoring (tiredness and hunger simulation)
+## 📌 **Description**
 
-Integration with the RandomUser API to simulate dynamic drivers
+**CarSimulator** is a C#-based simulation program that enables users to **interactively drive a virtual car** while monitoring internal systems and driver conditions.
 
-Support for unit testing using MSTest and NUnit
+### Key Capabilities:
+- Command-line interface for driving (move, turn, reverse, refuel, rest)
+- Real-time monitoring of **driver fatigue and hunger**
+- Integration with the **RandomUser API** to simulate dynamic drivers
+- Unit testing support via **MSTest** and **NUnit**
+- Separation of concerns via **layered architecture**
 
-Clear separation of logic into Core, Services, and Testing Projects
+---
 
+## 🧩 **Project Structure**
 
-🧩 Project Structure
-CarSimulator – Main application logic (car, driver, status, actions)
+CarSimulator → Main application (Car.cs, Driver.cs, etc.)
+Services → API logic (GetTheApi.cs, ApiResponse.cs)
+CarSimulator.Tests → MSTest unit & integration tests
+CarSimulator.NUnit → NUnit-based alternative tests
 
-Services – API and service classes (e.g. GetTheApi.cs, ApiResponse.cs)
-
-CarSimulator.Tests – Unit & integration tests with MSTest
-
-CarSimulator.NUnit – Additional unit tests using NUnit
-
-✅ Features
-✅ Simulated driver states: Tiredness & Hunger
-
-✅ Turn-based driving control (forward, turn left/right, reverse)
-
-✅ Dynamic driver generation via public API
-
-✅ Parallel test execution with MSTest/NUnit
-
-✅ Mocking with Moq for interface-based testing
-
-✅ Console-based user interaction
-
-🛠 Technologies Used
-C# .NET 9.0
-
-MSTest / NUnit / Moq
-
-Console UI
-
-HttpClient + JSON (Newtonsoft.Json)
-
-🔧 Installation
-bash
+yaml
 Kopiera
 Redigera
 
+---
+
+## ✅ **Features**
+
+- ✅ Simulated **driver states**: Tiredness & Hunger  
+- ✅ Turn-based driving mechanics  
+- ✅ **Dynamic drivers** via public API  
+- ✅ Test coverage with **MSTest** and **NUnit**  
+- ✅ Mocking support using **Moq**  
+- ✅ Fully console-based user interaction  
+- ✅ Parallel test execution  
+
+---
+
+## 🛠 **Technologies Used**
+
+- **C# (.NET 9.0)**
+- **MSTest / NUnit**
+- **Moq (Mocking Framework)**
+- **Console UI**
+- **HttpClient + Newtonsoft.Json**
+
+---
+
+## 🔧 **Installation**
+
+```bash
 git clone https://github.com/Nasi-Malek/CarSimulator.git
+Then:
+
 Open the solution in Visual Studio 2022 (v17.14+)
 
-Restore NuGet packages.
+Restore NuGet packages
 
-Build the solution (Ctrl+Shift+B)
+Build the solution with Ctrl + Shift + B
 
 🧪 Testing Instructions
-Unit Testing:
+✔️ Run Tests via Visual Studio:
+Use Test Explorer
 
-MSTest-based tests: in CarSimulator.Tests
-
-NUnit-based tests: in CarSimulator.NUnit
-
-Run via Test Explorer in Visual Studio or:
+Or run from CLI:
 
 bash
 Kopiera
 Redigera
 dotnet test CarSimulator.Tests
 dotnet test CarSimulator.NUnit
-Test Types:
+🔍 Test Coverage Includes:
+✅ Core logic tests: Fuel, Direction, Driver Fatigue
 
-✅ Core behavior tests (fuel, direction, tiredness)
+✅ Edge case testing: Hunger thresholds
 
-✅ Edge case tests (e.g. hunger thresholds)
-
-✅ Integration test for external API (ApiTest.cs)
-
+✅ Integration tests: API consumption and deserialization (ApiTest.cs)
 
 🚀 Usage
-Run the CarSimulator project.
+Run the CarSimulator project
 
-The program fetches a random driver from the API.
+A random driver is fetched from the API
 
-Navigate using options:
+Use the console options:
 
-Move forward
+markdown
+Kopiera
+Redigera
+1. Move forward  
+2. Turn left  
+3. Turn right  
+4. Reverse  
+5. Refuel  
+6. Rest  
+7. Exit
+After every action, car and driver status will be displayed.
 
-Turn (left/right)
-
-Reverse
-
-Refuel
-
-Rest
-
-Driver and car status will be shown at each turn.
+Created by Nasi-Malek – feel free to fork, contribute, or explore 🚘
